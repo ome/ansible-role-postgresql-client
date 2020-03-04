@@ -1,0 +1,5 @@
+---
+# defaults file for ome.postgresql-client
+
+# Required:
+# postgresql_client_version

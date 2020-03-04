@@ -1,0 +1,8 @@
+---
+# vars file for ome.postgresql_client
+
+postgresql_client_redhat_basename:
+  "9.6": postgresql96
+  "10": postgresql10
+  "11": postgresql11
+  "12": postgresql12

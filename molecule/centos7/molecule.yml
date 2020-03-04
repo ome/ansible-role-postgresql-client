@@ -1,0 +1,31 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: postgresql96
+    image: centos:7
+  - name: postgresql11
+    image: centos:7
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+  inventory:
+    host_vars:
+      postgresql96:
+        postgresql_client_version: "9.6"
+      postgresql11:
+        postgresql_client_version: "11"
+  playbooks:
+    converge: ../resources/playbook.yml
+scenario:
+  name: centos7
+verifier:
+  name: testinfra
+  directory: ../resources/tests/
+  lint:
+    name: flake8

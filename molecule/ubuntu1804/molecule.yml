@@ -1,0 +1,31 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: postgresql10
+    image: ubuntu:18.04
+  - name: postgresql12
+    image: ubuntu:18.04
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+  inventory:
+    host_vars:
+      postgresql10:
+        postgresql_client_version: "10"
+      postgresql12:
+        postgresql_client_version: "12"
+  playbooks:
+    converge: ../resources/playbook.yml
+scenario:
+  name: ubuntu1804
+verifier:
+  name: testinfra
+  directory: ../resources/tests/
+  lint:
+    name: flake8
