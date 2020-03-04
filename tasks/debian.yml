@@ -20,5 +20,5 @@
 - name: postgres | install client packages
   become: true
   apt:
-    name: postgresql-client-{{ postgresql_client_version }}
+    name: postgresql-client-{{ postgresql_version }}
     state: present

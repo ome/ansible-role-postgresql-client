@@ -8,7 +8,13 @@ lint:
 platforms:
   - name: postgresql96
     image: centos:7
+    groups:
+      - exactversion
+  - name: postgresql10
+    image: centos:7
   - name: postgresql11
+    image: centos:7
+  - name: postgresql12
     image: centos:7
 provisioner:
   name: ansible
@@ -17,9 +23,14 @@ provisioner:
   inventory:
     host_vars:
       postgresql96:
-        postgresql_client_version: "9.6"
+        postgresql_version: "9.6"
+        postgresql_package_version: "9.6.13"
+      postgresql10:
+        postgresql_version: "10"
       postgresql11:
-        postgresql_client_version: "11"
+        postgresql_version: "11"
+      postgresql12:
+        postgresql_version: "12"
   playbooks:
     converge: ../resources/playbook.yml
 scenario:

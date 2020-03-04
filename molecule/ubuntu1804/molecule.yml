@@ -6,7 +6,11 @@ driver:
 lint:
   name: yamllint
 platforms:
+  - name: postgresql96
+    image: ubuntu:18.04
   - name: postgresql10
+    image: ubuntu:18.04
+  - name: postgresql11
     image: ubuntu:18.04
   - name: postgresql12
     image: ubuntu:18.04
@@ -16,10 +20,14 @@ provisioner:
     name: ansible-lint
   inventory:
     host_vars:
+      postgresql96:
+        postgresql_version: "9.6"
       postgresql10:
-        postgresql_client_version: "10"
+        postgresql_version: "10"
+      postgresql11:
+        postgresql_version: "11"
       postgresql12:
-        postgresql_client_version: "12"
+        postgresql_version: "12"
   playbooks:
     converge: ../resources/playbook.yml
 scenario:
