@@ -7,11 +7,13 @@
     state: present
 
 - name: postgres | get postgresql apt key
+  become: true
   apt_key:
     url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
     state: present
 
 - name: postgres | setup apt repo
+  become: true
   apt_repository:
     codename: "{{ ansible_distribution_release }}"
     repo: deb http://apt.postgresql.org/pub/repos/apt/
