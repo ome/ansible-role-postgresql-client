@@ -16,6 +16,6 @@ postgresql_distribution_redhat:
     basename: postgresql11
     setup: postgresql-11-setup
   "12":
-    repo: pgdg11
+    repo: pgdg12
     basename: postgresql12
     setup: postgresql-12-setup
