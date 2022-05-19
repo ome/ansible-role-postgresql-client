@@ -1,6 +1,7 @@
 ---
 # vars file for ome.postgresql_client
 
+# DEPRECATED
 # This variable includes information used by the postgresql (server) role
 postgresql_distribution_redhat:
   "9.6":
