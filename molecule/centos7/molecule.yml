@@ -16,6 +16,10 @@ platforms:
     image: centos:7
   - name: postgresql12
     image: centos:7
+  - name: postgresql13
+    image: centos:7
+  - name: postgresql14
+    image: centos:7
 provisioner:
   name: ansible
   lint:
@@ -31,6 +35,10 @@ provisioner:
         postgresql_version: "11"
       postgresql12:
         postgresql_version: "12"
+      postgresql13:
+        postgresql_version: "13"
+      postgresql14:
+        postgresql_version: "14"
   playbooks:
     converge: ../resources/playbook.yml
 scenario:
