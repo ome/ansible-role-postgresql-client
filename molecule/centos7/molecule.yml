@@ -6,6 +6,10 @@ driver:
 lint:
   name: yamllint
 platforms:
+  - name: postgresql_exact
+    image: centos:7
+    groups:
+      - exactversion
   - name: postgresql10
     image: centos:7
   - name: postgresql11
@@ -22,6 +26,9 @@ provisioner:
     name: ansible-lint
   inventory:
     host_vars:
+      postgresql_exact:
+        postgresql_version: "12"
+        postgresql_package_version: "12.11"
       postgresql10:
         postgresql_version: "10"
       postgresql11:
