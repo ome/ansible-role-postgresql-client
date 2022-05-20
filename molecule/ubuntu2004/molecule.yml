@@ -7,15 +7,15 @@ lint:
   name: yamllint
 platforms:
   - name: postgresql10
-    image: ubuntu:18.04
+    image: ubuntu:20.04
   - name: postgresql11
-    image: ubuntu:18.04
+    image: ubuntu:20.04
   - name: postgresql12
-    image: ubuntu:18.04
+    image: ubuntu:20.04
   - name: postgresql13
-    image: ubuntu:18.04
+    image: ubuntu:20.04
   - name: postgresql14
-    image: ubuntu:18.04
+    image: ubuntu:20.04
 provisioner:
   name: ansible
   lint:
@@ -35,7 +35,7 @@ provisioner:
   playbooks:
     converge: ../resources/playbook.yml
 scenario:
-  name: ubuntu1804
+  name: ubuntu2004
 verifier:
   name: testinfra
   directory: ../resources/tests/

@@ -11,7 +11,7 @@
   become: true
   yum:
     name: >-
-      {{ postgresql_distribution_redhat[postgresql_version].basename }}{{
+      postgresql{{ postgresql_version }}{{
         (postgresql_package_version | length > 0) |
         ternary('-' + postgresql_package_version, '')
       }}
