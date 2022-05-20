@@ -1,7 +1,7 @@
 Postgresql Client
 =================
 
-[![Build Status](https://travis-ci.org/ome/ansible-role-postgresql-client.svg)](https://travis-ci.org/ome/ansible-role-postgresql-client)
+[![Actions Status](https://github.com/ome/ansible-role-postgresql-client/workflows/Molecule/badge.svg)](https://github.com/ome/ansible-role-postgresql-client/actions)
 [![Ansible Role](https://img.shields.io/ansible/role/47052.svg)](https://galaxy.ansible.com/ome/postgresql-client/)
 
 Install PostgreSQL clients from the upstream distribution.
