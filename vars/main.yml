@@ -8,10 +8,6 @@ postgresql_distribution_redhat:
     repo: pgdg96
     basename: postgresql96
     setup: postgresql96-setup
-  "10":
-    repo: pgdg10
-    basename: postgresql10
-    setup: postgresql-10-setup
   "11":
     repo: pgdg11
     basename: postgresql11
