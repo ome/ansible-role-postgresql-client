@@ -1,6 +1,6 @@
 ---
 
-- name: postgres | setup yum repository
+- name: postgres | setup dnf repository
   become: true
   ansible.builtin.dnf:
     update_cache: true
