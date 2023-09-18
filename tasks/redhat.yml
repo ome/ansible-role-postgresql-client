@@ -4,6 +4,9 @@
   become: true
   ansible.builtin.dnf:
     update_cache: true
+    #if not disable gpg check this we get this error
+    #Public key for pgdg-redhat-repo-latest.noarch4_ce18_d.rpm is not installed
+    disable_gpg_check: yes
     name:
       https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
     state: present
