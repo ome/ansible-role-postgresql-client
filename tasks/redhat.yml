@@ -2,14 +2,16 @@
 
 - name: postgres | setup yum repository
   become: true
-  yum:
+  ansible.builtin.dnf:
+    update_cache: true
     name:
-      https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+      https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
     state: present
 
 - name: postgres | install client packages
   become: true
-  yum:
+  ansible.builtin.dnf:
+    update_cache: true
     name: >-
       postgresql{{ postgresql_version }}{{
         (postgresql_package_version | length > 0) |

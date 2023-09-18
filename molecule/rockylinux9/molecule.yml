@@ -9,17 +9,17 @@ lint: |
     flake8
 platforms:
   - name: postgresql_exact
-    image: centos:7
+    image: rockylinux:9
     groups:
       - exactversion
   - name: postgresql11
-    image: centos:7
+    image: rockylinux:9
   - name: postgresql12
-    image: centos:7
+    image: rockylinux:9
   - name: postgresql13
-    image: centos:7
+    image: rockylinux:9
   - name: postgresql14
-    image: centos:7
+    image: rockylinux:9
 provisioner:
   name: ansible
   lint:
@@ -40,7 +40,7 @@ provisioner:
   playbooks:
     converge: ../resources/playbook.yml
 scenario:
-  name: centos7
+  name: rockylinux9
 verifier:
   name: testinfra
   directory: ../resources/tests/
