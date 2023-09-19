@@ -31,7 +31,7 @@
 - name: postgres | setup dnf repository
   become: true
   ansible.builtin.dnf:
-    update_cache: truefor postgresql"
+    update_cache: true
     name:
       https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
     state: present
