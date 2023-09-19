@@ -1,5 +1,5 @@
 ---
-- name: Import a key for poastgres
+- name: Import a key for postgres
   ansible.builtin.rpm_key:
     state: present
     key:  https://download.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG
