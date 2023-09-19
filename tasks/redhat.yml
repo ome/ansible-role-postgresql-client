@@ -1,32 +1,8 @@
 ---
-- name: Import a key for poastgres 10
+- name: Import a key for poastgres
   ansible.builtin.rpm_key:
     state: present
-    key: https://download.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG-10
-
-
-- name: Import a key poastgres 11
-  ansible.builtin.rpm_key:
-    state: present
-    key: https://download.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG-11
-
-
-- name: Import a key from a url 12
-  ansible.builtin.rpm_key:
-    state: present
-    key: https://download.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG-12
-
-
-- name: Import a key poastgres 13
-  ansible.builtin.rpm_key:
-    state: present
-    key: https://download.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG-13
-
-
-- name: Import a key for poastgres 14
-  ansible.builtin.rpm_key:
-    state: present
-    key: https://download.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG-14
+    key:  https://download.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG
 
 - name: postgres | setup dnf repository
   become: true
