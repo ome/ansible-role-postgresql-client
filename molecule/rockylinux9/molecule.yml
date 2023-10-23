@@ -8,10 +8,6 @@ lint: |
     ansible-lint
     flake8
 platforms:
-  - name: postgresql_exact
-    image: rockylinux:9
-    groups:
-      - exactversion
   - name: postgresql11
     image: rockylinux:9
   - name: postgresql12
