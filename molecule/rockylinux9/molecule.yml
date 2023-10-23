@@ -27,8 +27,6 @@ provisioner:
   inventory:
     host_vars:
       postgresql_exact:
-        postgresql_version: "12"
-        postgresql_package_version: "12.11"
       postgresql11:
         postgresql_version: "11"
       postgresql12:
