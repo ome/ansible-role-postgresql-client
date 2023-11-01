@@ -1,15 +1,21 @@
 ---
+- name: Import a key for postgres
+  ansible.builtin.rpm_key:
+    state: present
+    key:  https://download.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG
 
-- name: postgres | setup yum repository
+- name: postgres | setup dnf repository
   become: true
-  yum:
+  ansible.builtin.dnf:
+    update_cache: true
     name:
-      https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+      https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
     state: present
 
 - name: postgres | install client packages
   become: true
-  yum:
+  ansible.builtin.dnf:
+    update_cache: true
     name: >-
       postgresql{{ postgresql_version }}{{
         (postgresql_package_version | length > 0) |

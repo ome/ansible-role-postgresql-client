@@ -2,7 +2,8 @@
 
 - name: postgres | install gpg for apt repo
   become: true
-  apt:
+  ansible.builtin.apt:
+    update_cache: true
     name: gnupg
     state: present
 
@@ -21,6 +22,7 @@
 
 - name: postgres | install client packages
   become: true
-  apt:
+  ansible.builtin.apt:
+    update_cache: true
     name: postgresql-client-{{ postgresql_version }}
     state: present

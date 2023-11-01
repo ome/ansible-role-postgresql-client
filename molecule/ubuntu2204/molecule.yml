@@ -8,27 +8,20 @@ lint: |
     ansible-lint
     flake8
 platforms:
-  - name: postgresql_exact
-    image: centos:7
-    groups:
-      - exactversion
   - name: postgresql11
-    image: centos:7
+    image: ubuntu:22.04
   - name: postgresql12
-    image: centos:7
+    image: ubuntu:22.04
   - name: postgresql13
-    image: centos:7
+    image: ubuntu:22.04
   - name: postgresql14
-    image: centos:7
+    image: ubuntu:22.04
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
   inventory:
     host_vars:
-      postgresql_exact:
-        postgresql_version: "12"
-        postgresql_package_version: "12.11"
       postgresql11:
         postgresql_version: "11"
       postgresql12:
@@ -40,7 +33,7 @@ provisioner:
   playbooks:
     converge: ../resources/playbook.yml
 scenario:
-  name: centos7
+  name: ubuntu2204
 verifier:
   name: testinfra
   directory: ../resources/tests/
