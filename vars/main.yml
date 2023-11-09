@@ -24,3 +24,8 @@ postgresql_distribution_redhat:
     repo: pgdg14
     basename: postgresql14
     setup: postgresql-14-setup
+  "15":
+    repo: pgdg15
+    basename: postgresql15
+    setup: postgresql-15-setup
+
