@@ -2,13 +2,21 @@
 - name: Import a key for postgres (x86_64)
   ansible.builtin.rpm_key:
     state: present
-    key:  https://download.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG
+    key:  https://download.postgresql.org/pub/repos/yum/keys/RPM-GPG-KEY-PGDG
   when: ansible_facts.get('architecture') is search("x86_64")
 
 - name: Import a key for postgres (aarch64)
   ansible.builtin.rpm_key:
     state: present
-    key:  https://download.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG-AARCH64-RHEL9
+    # key:  https://download.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG
+    key: https://download.postgresql.org/pub/repos/yum/keys/RPM-GPG-KEY-PGDG-AARCH64-RHEL9
+  when: ansible_facts.get('architecture') is search("aarch64")
+
+- name: Import a key for postgres (aarch64) 2
+  ansible.builtin.rpm_key:
+    state: present
+    key:  https://download.postgresql.org/pub/repos/yum/keys/RPM-GPG-KEY-PGDG
+    # key: https://download.postgresql.org/pub/repos/yum/keys/RPM-GPG-KEY-PGDG-AARCH64-RHEL9
   when: ansible_facts.get('architecture') is search("aarch64")
 
 - name: postgres | setup dnf repository for arch64
