@@ -2,7 +2,7 @@ Postgresql Client
 =================
 
 [![Actions Status](https://github.com/ome/ansible-role-postgresql-client/workflows/Molecule/badge.svg)](https://github.com/ome/ansible-role-postgresql-client/actions)
-[![Ansible Role](https://img.shields.io/badge/ansible--galaxy-postgresql_client-blue.svg)](https://galaxy.ansible.com/ui/standalone/roles/ome/postgresql_client/)
+[![Ansible Role](https://img.shields.io/badge/ansible--galaxy-postgresql-client-blue.svg)](https://galaxy.ansible.com/ui/standalone/roles/ome/postgresql-client/)
 
 Install PostgreSQL clients from the upstream distribution.
 
@@ -26,7 +26,7 @@ Example Playbook
     # which allow access to all users
     - hosts: localhost
       roles:
-      - role: ome.postgresql_client
+      - role: ome.postgresql-client
         postgresql_version: "12"
 
 
