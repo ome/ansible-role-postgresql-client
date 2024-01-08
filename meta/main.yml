@@ -13,7 +13,7 @@ galaxy_info:
       versions:
         - jammy
   namespace: ome
-  role_name: postgresql_client
+  role_name: postgresql-client
   galaxy_tags: ['postgresql', 'database']
 
 dependencies: []
