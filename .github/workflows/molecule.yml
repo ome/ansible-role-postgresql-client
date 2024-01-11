@@ -55,5 +55,8 @@ jobs:
           name=$(grep 'role_name' meta/main.yml | sed -r 's/^[^:]*:(.*)$/\1/')
           echo "rolename=$name" >> "$GITHUB_OUTPUT"
       - name: Publish to Galaxy
-        run: |
-          ansible-galaxy role import -vvv --api-key ${{ secrets.GALAXY_API_KEY }} --branch ${{  github.ref_name }} --role-name=${{ steps.role-name.outputs.rolename }} ${GITHUB_REPOSITORY%/*} ${GITHUB_REPOSITORY#*/} 
+        uses: ome/action-ansible-galaxy-publish@main
+        with:
+          galaxy-api-key: ${{ secrets.GALAXY_API_KEY }}
+          galaxy-version: ${{  github.ref_name }}
+          role-name: ${{ steps.role-name.outputs.rolename }}
