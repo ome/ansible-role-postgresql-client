@@ -12,7 +12,7 @@
     key: https://download.postgresql.org/pub/repos/yum/keys/PGDG-RPM-GPG-KEY-AARCH64-RHEL
   when: ansible_facts.get('architecture') is search("aarch64")
 
-- name: postgres | setup dnf repository for arch64
+- name: Postgres | setup dnf repository for arch64
   become: true
   ansible.builtin.dnf:
     update_cache: true
@@ -21,7 +21,7 @@
     state: present
   when: ansible_facts.get('architecture') is search("aarch64")
 
-- name: postgres | setup dnf repository for amd64
+- name: Postgres | setup dnf repository for amd64
   become: true
   ansible.builtin.dnf:
     update_cache: true
@@ -30,7 +30,7 @@
     state: present
   when: ansible_facts.get('architecture') is search("x86_64")
 
-- name: postgres | install client packages
+- name: Postgres | install client packages
   become: true
   ansible.builtin.dnf:
     update_cache: true

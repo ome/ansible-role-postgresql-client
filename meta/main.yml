@@ -4,7 +4,7 @@ galaxy_info:
   description: Upstream PostgreSQL client
   company: Open Microscopy Environment
   license: BSD
-  min_ansible_version: 2.6
+  min_ansible_version: '2.10'
   platforms:
     - name: EL
       versions:
@@ -15,5 +15,3 @@ galaxy_info:
   namespace: ome
   role_name: postgresql_client
   galaxy_tags: ['postgresql', 'database']
-
-dependencies: []
