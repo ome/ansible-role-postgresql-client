@@ -1,12 +1,14 @@
 ---
 
 - name: Import a key for postgres (x86_64)
+  become: true
   ansible.builtin.rpm_key:
     state: present
     key:  https://download.postgresql.org/pub/repos/yum/keys/PGDG-RPM-GPG-KEY-RHEL
   when: ansible_facts.get('architecture') is search("x86_64")
 
 - name: Import a key for postgres (aarch64)
+  become: true
   ansible.builtin.rpm_key:
     state: present
     key: https://download.postgresql.org/pub/repos/yum/keys/PGDG-RPM-GPG-KEY-AARCH64-RHEL
