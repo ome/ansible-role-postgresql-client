@@ -8,10 +8,6 @@ lint: |
     ansible-lint
     flake8
 platforms:
-  - name: postgresql12
-    image: rockylinux:9
-  - name: postgresql13
-    image: rockylinux:9
   - name: postgresql14
     image: rockylinux:9
   - name: postgresql15
@@ -25,10 +21,6 @@ provisioner:
   inventory:
     host_vars:
       postgresql_exact:
-      postgresql12:
-        postgresql_version: "12"
-      postgresql13:
-        postgresql_version: "13"
       postgresql14:
         postgresql_version: "14"
       postgresql15:

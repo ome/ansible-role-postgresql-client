@@ -7,4 +7,4 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 def test_psql_version(host):
     out = host.check_output('psql --version')
-    assert out == 'psql (PostgreSQL) 12.11'
+    assert out == 'psql (PostgreSQL) 16.11'
