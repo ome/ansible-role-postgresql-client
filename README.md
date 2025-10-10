@@ -14,7 +14,7 @@ Role Variables
 
 Required:
 
-- `postgresql_version`: The PostgreSQL major version, e.g. `14`, `15`, `16`
+- `postgresql_version`: The PostgreSQL major version, e.g. `14`, `15`, `16`, `17`, `18`
 
 Optional:
 - `postgresql_package_version`: The PostgreSQL full version, ignored on Ubuntu, e.g. `16.11`

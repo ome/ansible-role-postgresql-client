@@ -16,3 +16,11 @@ postgresql_distribution_redhat:
     repo: pgdg16
     basename: postgresql16
     setup: postgresql-16-setup
+  "17":
+    repo: pgdg17
+    basename: postgresql17
+    setup: postgresql-17-setup
+  "18":
+    repo: pgdg18
+    basename: postgresql18
+    setup: postgresql-18-setup

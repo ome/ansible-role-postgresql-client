@@ -14,6 +14,10 @@ platforms:
     image: ubuntu:22.04
   - name: postgresql16
     image: ubuntu:22.04
+  - name: postgresql17
+    image: ubuntu:22.04
+  - name: postgresql18
+    image: ubuntu:22.04
 provisioner:
   name: ansible
   lint:
@@ -26,6 +30,10 @@ provisioner:
         postgresql_version: "15"
       postgresql16:
         postgresql_version: "16"
+      postgresql17:
+        postgresql_version: "17"
+      postgresql18:
+        postgresql_version: "18"
   playbooks:
     converge: ../resources/playbook.yml
 scenario:

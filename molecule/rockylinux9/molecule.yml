@@ -14,6 +14,10 @@ platforms:
     image: rockylinux:9
   - name: postgresql16
     image: rockylinux:9
+  - name: postgresql17
+    image: rockylinux:9
+  - name: postgresql18
+    image: rockylinux:9
 provisioner:
   name: ansible
   lint:
@@ -27,6 +31,10 @@ provisioner:
         postgresql_version: "15"
       postgresql16:
         postgresql_version: "16"
+      postgresql17:
+        postgresql_version: "17"
+      postgresql18:
+        postgresql_version: "18"
   playbooks:
     converge: ../resources/playbook.yml
 scenario:
