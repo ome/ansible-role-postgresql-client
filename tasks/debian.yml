@@ -24,5 +24,6 @@
   become: true
   ansible.builtin.apt:
     update_cache: true
+    cache_valid_time: 86400
     name: postgresql-client-{{ postgresql_version }}
     state: present

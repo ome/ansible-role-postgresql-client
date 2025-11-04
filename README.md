@@ -14,10 +14,10 @@ Role Variables
 
 Required:
 
-- `postgresql_version`: The PostgreSQL major version, e.g. `11`, `12`, `13`, `14`, `15`, `16`
+- `postgresql_version`: The PostgreSQL major version, e.g. `14`, `15`, `16`, `17`, `18`
 
 Optional:
-- `postgresql_package_version`: The PostgreSQL full version, ignored on Ubuntu, e.g. `12.11`
+- `postgresql_package_version`: The PostgreSQL full version, ignored on Ubuntu, e.g. `16.11`
 
 
 Example Playbook
@@ -28,7 +28,7 @@ Example Playbook
     - hosts: localhost
       roles:
       - role: ome.postgresql_client
-        postgresql_version: "12"
+        postgresql_version: "16"
 
 
 Author Information
