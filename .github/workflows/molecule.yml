@@ -14,7 +14,7 @@ jobs:
     outputs:
       matrix: ${{ steps.listscenarios.outputs.scenarios }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - id: listscenarios
         uses: ome/action-ansible-molecule-list-scenarios@main
 
@@ -29,8 +29,8 @@ jobs:
       matrix:
         scenario: ${{fromJson(needs.list-scenarios.outputs.matrix)}}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - name: Install Ansible & Molecule
@@ -48,15 +48,8 @@ jobs:
       - test
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - name: Read the role name
-        id: role-name
-        run: |
-          name=$(grep 'role_name' meta/main.yml | sed -r 's/^[^:]*:(.*)$/\1/' | tr -d '[:space:]')
-          echo "rolename=$name" >> "$GITHUB_OUTPUT"
-      - name: Publish to Galaxy
-        uses: ome/action-ansible-galaxy-publish@main
+      - name: galaxy
+        uses: ansible-actions/ansible-galaxy-action@v1.2.0
         with:
-          galaxy-api-key: ${{ secrets.GALAXY_API_KEY }}
-          galaxy-version: ${{ github.ref_name }}
-          role-name: ${{ steps.role-name.outputs.rolename }}
+          galaxy_api_key: ${{ secrets.GALAXY_API_KEY }}
+          galaxy_version: ${{  github.ref_name }}
