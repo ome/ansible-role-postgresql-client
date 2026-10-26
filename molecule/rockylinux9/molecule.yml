@@ -9,15 +9,15 @@ lint: |
     flake8
 platforms:
   - name: postgresql14
-    image: rockylinux:9
+    image: rockylinux/rockylinux:9
   - name: postgresql15
-    image: rockylinux:9
+    image: rockylinux/rockylinux:9
   - name: postgresql16
-    image: rockylinux:9
+    image: rockylinux/rockylinux:9
   - name: postgresql17
-    image: rockylinux:9
+    image: rockylinux/rockylinux:9
   - name: postgresql18
-    image: rockylinux:9
+    image: rockylinux/rockylinux:9
 provisioner:
   name: ansible
   lint:
