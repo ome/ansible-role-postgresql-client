@@ -1,4 +1,8 @@
 ---
+- name: Install sudo
+  ansible.builtin.dnf:
+    name: sudo
+    state: present
 
 - name: Import a key for postgres (x86_64)
   become: true
