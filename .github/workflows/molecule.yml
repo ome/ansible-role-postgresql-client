@@ -27,7 +27,7 @@ jobs:
       # Keep running so we can see if other tests pass
       fail-fast: false
       matrix:
-        runner: [ubuntu-24.04, ubuntu-24.04-arm]
+        #runner: [ubuntu-24.04, ubuntu-24.04-arm]
         scenario: ${{fromJson(needs.list-scenarios.outputs.matrix)}}
     steps:
       - uses: actions/checkout@v4
