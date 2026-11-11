@@ -1,5 +1,6 @@
 ---
-name: Molecule
+name: Molecule-Arm
+run-name: Molecule on Arm
 # yamllint disable-line rule:truthy
 on:
   push:
